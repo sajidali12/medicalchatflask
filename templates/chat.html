@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Lab Report Chatbot</title>
+</head>
+<body>
+    <h2>Welcome to the Medical Lab Report Chatbot</h2>
+    <p>Please enter your lab test results below to get an analysis:</p>
+
+    <form action="/predict" method="post">
+        <label for="age">Age:</label><br>
+        <input type="text" id="age" name="age"><br><br>
+        
+        <label for="cholesterol">Cholesterol (mg/dL):</label><br>
+        <input type="text" id="cholesterol" name="cholesterol"><br><br>
+        
+        <label for="bp">Blood Pressure (mm Hg):</label><br>
+        <input type="text" id="bp" name="bp"><br><br>
+        
+        <label for="glucose">Glucose (mg/dL):</label><br>
+        <input type="text" id="glucose" name="glucose"><br><br>
+        
+        <label for="bmi">BMI:</label><br>
+        <input type="text" id="bmi" name="bmi"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if prediction_text %}
+        <h3>Result:</h3>
+        <p>{{ prediction_text }}</p>
+    {% endif %}
+</body>
+</html>
